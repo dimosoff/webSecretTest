@@ -9,6 +9,7 @@
   object-fit: cover;
   transform: translate(-50%, -50%) scale(1.001);
 }
+
 $button-box-shadow-color: rgba(209, 26, 42, 0.15);
 ._btn {
   color: $main-color;
@@ -22,7 +23,7 @@ $button-box-shadow-color: rgba(209, 26, 42, 0.15);
   border-radius: 12px;
   text-decoration: none;
   background-color: $red-color;
-  transition: background-color $transition3, box-shadow $transition3;
+  transition: background-color $transition3, box-shadow $transition1, outline-offset $transition1;
 
   &:hover {
     background-color: #e02535;
@@ -32,7 +33,7 @@ $button-box-shadow-color: rgba(209, 26, 42, 0.15);
     box-shadow: 0px 0px 0px $button-box-shadow-color;
   }
   &:disabled {
-    background-color: #B8BABF;
+    background-color: #b8babf;
   }
 }
 .sr-only {
@@ -49,6 +50,7 @@ a[href] {
   color: $red-color;
   border-radius: 2px;
   text-decoration: none;
+  transition: outline-offset $transition1;
 
   &:hover {
     text-decoration: underline;
