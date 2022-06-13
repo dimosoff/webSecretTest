@@ -1,0 +1,230 @@
+$body-color: #23262f;
+$main-color: #fff;
+$red-color: #d11a2a;
+$green-color: #06b966;
+$grey-color: #777e90;
+$grey-background-color: #f4f5f6;
+$desktop-min: "min-width: 992px";
+$tablet-max: "max-width: 991.98px";
+$tablet-min: "min-width: 576px";
+$mobile-max: "max-width: 575.98px";
+$transition3: 0.3s ease;
+
+@mixin flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin flex-col-50 {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+@mixin flex-col-100 {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+@import "_nullstyle.scss";
+@import "_fonts.scss";
+@import "_templates.scss";
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: $body-color;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.wrapper {
+  min-height: 100vh;
+}
+.container {
+  // max-width: 1230px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.section-heading {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.registration {
+  &__row {
+    @include flex-row;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+  &__col {
+    flex: 1 1 48.5%;
+    max-width: 48.5%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  &__form-wrapper {
+    flex-basis: 51.5%;
+    max-width: 51.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.form {
+  max-width: 397px;
+  padding-bottom: 42px;
+
+  &__title {
+    margin-bottom: 42px;
+  }
+  &__row {
+    @include flex-row;
+    justify-content: center;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__item {
+    @include flex-col-50;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &_wide {
+      @include flex-col-100;
+    }
+    &_wide:last-child,
+    &:not(&_wide) + &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.f-item {
+  margin-bottom: 26px;
+
+  &__wrapper {
+    position: relative;
+  }
+  &__label {
+    display: inline-block;
+    color: $grey-color;
+    margin-bottom: 14px;
+  }
+  &__input {
+    width: 100%;
+    border: 0;
+    color: inherit;
+    padding: 10px 20px;
+    min-height: 56px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: $grey-background-color;
+    transition: outline $transition3;
+
+    &:focus {
+      outline: 1px solid $grey-color;
+    }
+    &_error {
+      outline: 1px solid $red-color;
+    }
+  }
+  &__toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    opacity: 0.5;
+    transform: translateY(-50%);
+    background: url("../images/show-password-icon.svg") center center / 24px 24px no-repeat transparent;
+    border-radius: 10%;
+    transition: opacity $transition3;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+  &__error-message {
+    color: #000;
+    margin-top: 10px;
+    line-height: 1.77;
+  }
+  &__required-note {
+    color: $grey-color;
+    margin-top: -4px;
+  }
+  & input[type=checkbox] {
+    & + label {
+      position: relative;
+      margin-top: 12px;
+      padding-left: 29px;
+    }
+    &:focus + label:before {
+      outline: 1px solid $grey-color;
+      outline-offset: 2px;
+    }
+    @mixin checkbox-pseudo-default {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+    }
+    & + label:before {
+      @include checkbox-pseudo-default;
+      background-color: $grey-color;
+      transition: background-color $transition3;
+    }
+    &:checked + label:before {
+      background-color: $green-color;
+    }
+    & + label:after {
+      @include checkbox-pseudo-default;
+      background: url("../images/check-icon.svg") center / auto no-repeat transparent;
+      opacity: 0;
+      transform: translateY(-2px);
+      transition: opacity $transition3 0.1s, transform $transition3 0.1s;
+    }
+    &:checked + label:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__button {
+    width: 100%;
+    margin-top: -13px;
+  }
+
+  @mixin placeholder {
+    color: $grey-color;
+    opacity: 1;
+  }
+  input::-webkit-input-placeholder {
+    @include placeholder;
+  }
+  input::-moz-placeholder {
+    @include placeholder;
+  }
+  input:-ms-input-placeholder {
+    @include placeholder;
+  }
+  input:-moz-placeholder {
+    @include placeholder;
+  }
+  input::placeholder {
+    @include placeholder;
+  }
+}
+.required-star {
+  font-weight: 600;
+  color: $red-color;
+}
+.side-banner {
+  min-height: 100vh;
+  background: url("../images/side-banner-element-01.svg") left top 44px / auto no-repeat,
+    url("../images/side-banner-element-02.svg") right top / auto no-repeat,
+    url("../images/side-banner-element-03.svg") 48.8% 38.6% / auto no-repeat, $grey-background-color;
+  background-color: $grey-background-color;
+  margin-right: -16px;
+  margin-left: -16px;
+}

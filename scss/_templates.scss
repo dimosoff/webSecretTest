@@ -1,0 +1,60 @@
+._bkgr-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%) scale(1.001);
+}
+$button-box-shadow-color: rgba(209, 26, 42, 0.15);
+._btn {
+  color: $main-color;
+  border: 0 solid $red-color;
+  padding: 10px 20px;
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0px 20px 25px $button-box-shadow-color;
+  min-height: 56px;
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: $red-color;
+  transition: background-color $transition3, box-shadow $transition3;
+
+  &:hover {
+    background-color: #e02535;
+  }
+  &:active {
+    background-color: #d11a2a;
+    box-shadow: 0px 0px 0px $button-box-shadow-color;
+  }
+  &:disabled {
+    background-color: #B8BABF;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+a[href] {
+  color: $red-color;
+  border-radius: 2px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+*:focus {
+  outline: 1px solid $grey-color;
+  outline-offset: 2px;
+}
