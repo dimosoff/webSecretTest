@@ -142,29 +142,43 @@ body {
     &_error {
       outline: 1px solid $red-color;
     }
+    &_valid {
+      outline: 1px solid $green-color;
+    }
   }
   &__toggle-password {
     position: absolute;
-    top: 50%;
+    top: 4px;
     right: 4px;
     width: 48px;
     height: 48px;
     border: 0;
     opacity: 0.5;
-    transform: translateY(-50%);
     background: url("../images/show-password-icon.svg") center center / 24px 24px no-repeat transparent;
     border-radius: 10%;
     transition: opacity $transition3, outline-offset $transition1;
 
+    &_active {
+      background-image: url("../images/hide-password-icon.svg");
+    }
     &:hover,
     &:focus {
       opacity: 1;
     }
   }
   &__error-message {
+    visibility: hidden;
     color: #000;
-    margin-top: 10px;
+    opacity: 0;
+    margin-top: 0;
     line-height: 1.77;
+    transition: margin-top $transition3, opacity $transition3, visibility $transition3;
+
+    &_active {
+      visibility: visible;
+      opacity: 1;
+      margin-top: 10px;
+    }
   }
   &__required-note {
     color: $grey-color;

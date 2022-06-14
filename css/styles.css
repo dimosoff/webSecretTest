@@ -369,20 +369,26 @@ body {
   outline: 1px solid #d11a2a;
 }
 
+.f-item__input_valid {
+  outline: 1px solid #06b966;
+}
+
 .f-item__toggle-password {
   position: absolute;
-  top: 50%;
+  top: 4px;
   right: 4px;
   width: 48px;
   height: 48px;
   border: 0;
   opacity: 0.5;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   background: url("../images/show-password-icon.svg") center center/24px 24px no-repeat transparent;
   border-radius: 10%;
   -webkit-transition: opacity 0.3s ease, outline-offset 0.1s ease;
   transition: opacity 0.3s ease, outline-offset 0.1s ease;
+}
+
+.f-item__toggle-password_active {
+  background-image: url("../images/hide-password-icon.svg");
 }
 
 .f-item__toggle-password:hover, .f-item__toggle-password:focus {
@@ -390,9 +396,19 @@ body {
 }
 
 .f-item__error-message {
+  visibility: hidden;
   color: #000;
-  margin-top: 10px;
+  opacity: 0;
+  margin-top: 0;
   line-height: 1.77;
+  -webkit-transition: margin-top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transition: margin-top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.f-item__error-message_active {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 10px;
 }
 
 .f-item__required-note {

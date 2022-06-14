@@ -23,28 +23,31 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <main class="wrapper">
     <section class="registration">
       <div class="container">
         <div class="registration__row">
           <div class="registration__col registration__form-wrapper">
-            <form class="form" name="form">
-              <h2 class="form__title section-heading">Регистрация</span></h2>
+            <form class="form" name="form" novalidate>
+              <h1 class="form__title section-heading">Регистрация</span></h2>
               <div class="form__row">
                 <div class="form__item f-item">
                   <label for="first-name" class="f-item__label">Имя <span class="required-star">*</span></label>
                   <input class="f-item__input" type="text" name="f-first-name" id="first-name" value=""
-                    placeholder="Иван" required>
+                    placeholder="Иван" data-required>
+                  <p class="f-item__error-message"></p>
                 </div>
                 <div class="form__item f-item">
                   <label for="last-name" class="f-item__label">Фамилия <span class="required-star">*</span></label>
                   <input class="f-item__input" type="text" name="f-last-name" id="last-name" value=""
-                    placeholder="Иванов" required>
+                    placeholder="Иванов" data-required>
+                  <p class="f-item__error-message"></p>
                 </div>
                 <div class="form__item f-item">
                   <label for="email" class="f-item__label">Email <span class="required-star">*</span></label>
                   <input class="f-item__input" type="email" name="f-email" id="email" value=""
-                    placeholder="email@gmail.com" required>
+                    placeholder="email@gmail.com" data-required>
+                  <p class="f-item__error-message"></p>
                 </div>
                 <div class="form__item f-item">
                   <label for="phone" class="f-item__label">Телефон</label>
@@ -54,18 +57,18 @@
                 <div class="form__item form__item_wide f-item">
                   <label for="password" class="f-item__label">Пароль <span class="required-star">*</span></label>
                   <div class="f-item__wrapper">
-                    <input class="f-item__input" type="password" name="f-password" id="password" value="" placeholder="• • • • • •"
-                      required>
+                    <input class="f-item__input" type="password" name="f-password" id="password" value=""
+                      placeholder="• • • • • •" data-required>
                     <button class="f-item__toggle-password" type="button" name="f-toggle-password"><span
                         class="sr-only">показать/скрыть пароль</span></button>
+                    <p class="f-item__error-message"></p>
                   </div>
                 </div>
                 <div class="form__item form__item_wide f-item">
                   <label for="tax-number" class="f-item__label">ИНН <span class="required-star">*</span></label>
-                  <input class="f-item__input f-item__input_error" type="text" name="f-tax-number" id="tax-number"
-                    value="" placeholder="548782746" required>
-                  <p class="f-item__error-message">Ваша компания уже зарегистрирована, пожалуйста обратитесь к менеджеру вашего
-                    аккаунта или <a href="#">напишите нам</a></p>
+                  <input class="f-item__input" type="text" name="f-tax-number" id="tax-number"
+                    value="" placeholder="548782746" data-required>
+                  <p class="f-item__error-message"></p>
                 </div>
                 <div class="form__item  form__item_wide f-item">
                   <p class="f-item__required-note"><span class="required-star">*</span> - обязательные поля</p>
