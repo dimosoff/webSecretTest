@@ -23,7 +23,7 @@ $button-box-shadow-color: rgba(209, 26, 42, 0.15);
   border-radius: 12px;
   text-decoration: none;
   background-color: $red-color;
-  transition: background-color $transition3, box-shadow $transition1, outline-offset $transition1;
+  transition: background-color $transition3, box-shadow $transition3;
 
   &:hover {
     background-color: #e02535;
@@ -50,13 +50,18 @@ a[href] {
   color: $red-color;
   border-radius: 2px;
   text-decoration: none;
-  transition: outline-offset $transition1;
+  transition: box-shadow $transition3;
 
   &:hover {
     text-decoration: underline;
   }
 }
+a,
+input,
+button {
+  box-shadow: 0 0 0 1px transparent;
+}
 *:focus {
-  outline: 1px solid $grey-color;
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px $grey-color;
 }

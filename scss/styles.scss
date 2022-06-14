@@ -134,16 +134,17 @@ body {
     font-size: 14px;
     border-radius: 8px;
     background-color: $grey-background-color;
-    transition: outline $transition3, outline-offset $transition1;
+    transition: box-shadow $transition3;
 
     &:focus {
-      outline: 1px solid $grey-color;
+      outline: none;
+      box-shadow: 0 0 0 2px $grey-color;
     }
     &_error {
-      outline: 1px solid $red-color;
+      box-shadow: 0 0 0 1px $red-color;
     }
     &_valid {
-      outline: 1px solid $green-color;
+      box-shadow: 0 0 0 1px $green-color;
     }
   }
   &__toggle-password {
@@ -156,7 +157,7 @@ body {
     opacity: 0.5;
     background: url("../images/show-password-icon.svg") center center / 24px 24px no-repeat transparent;
     border-radius: 10%;
-    transition: opacity $transition3, outline-offset $transition1;
+    transition: opacity $transition3, box-shadow $transition3;
 
     &_active {
       background-image: url("../images/hide-password-icon.svg");
@@ -202,8 +203,8 @@ body {
     }
     &:focus + label:before,
     &:active + label:before {
-      outline: 1px solid $grey-color;
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: 0 0 0 2px $grey-color;
     }
     @mixin checkbox-pseudo-default {
       content: "";
@@ -217,8 +218,8 @@ body {
     }
     & + label:before {
       @include checkbox-pseudo-default;
-      background-color: $grey-color;
-      transition: background-color $transition3, outline-offset $transition1;
+      background-color: #adb3c1;
+      transition: background-color $transition3, box-shadow $transition3;
     }
     &:checked + label:before {
       background-color: $green-color;

@@ -134,10 +134,10 @@ button {
   border-radius: 12px;
   text-decoration: none;
   background-color: #d11a2a;
-  -webkit-transition: background-color 0.3s ease, outline-offset 0.1s ease, -webkit-box-shadow 0.1s ease;
-  transition: background-color 0.3s ease, outline-offset 0.1s ease, -webkit-box-shadow 0.1s ease;
-  transition: background-color 0.3s ease, box-shadow 0.1s ease, outline-offset 0.1s ease;
-  transition: background-color 0.3s ease, box-shadow 0.1s ease, outline-offset 0.1s ease, -webkit-box-shadow 0.1s ease;
+  -webkit-transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 ._btn:hover {
@@ -169,17 +169,27 @@ a[href] {
   color: #d11a2a;
   border-radius: 2px;
   text-decoration: none;
-  -webkit-transition: outline-offset 0.1s ease;
-  transition: outline-offset 0.1s ease;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 a[href]:hover {
   text-decoration: underline;
 }
 
+a,
+input,
+button {
+  -webkit-box-shadow: 0 0 0 1px transparent;
+          box-shadow: 0 0 0 1px transparent;
+}
+
 *:focus {
-  outline: 1px solid #777e90;
-  outline-offset: 2px;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px #777e90;
+          box-shadow: 0 0 0 2px #777e90;
 }
 
 body {
@@ -357,20 +367,26 @@ body {
   font-size: 14px;
   border-radius: 8px;
   background-color: #f4f5f6;
-  -webkit-transition: outline 0.3s ease, outline-offset 0.1s ease;
-  transition: outline 0.3s ease, outline-offset 0.1s ease;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .f-item__input:focus {
-  outline: 1px solid #777e90;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px #777e90;
+          box-shadow: 0 0 0 2px #777e90;
 }
 
 .f-item__input_error {
-  outline: 1px solid #d11a2a;
+  -webkit-box-shadow: 0 0 0 1px #d11a2a;
+          box-shadow: 0 0 0 1px #d11a2a;
 }
 
 .f-item__input_valid {
-  outline: 1px solid #06b966;
+  -webkit-box-shadow: 0 0 0 1px #06b966;
+          box-shadow: 0 0 0 1px #06b966;
 }
 
 .f-item__toggle-password {
@@ -383,8 +399,10 @@ body {
   opacity: 0.5;
   background: url("../images/show-password-icon.svg") center center/24px 24px no-repeat transparent;
   border-radius: 10%;
-  -webkit-transition: opacity 0.3s ease, outline-offset 0.1s ease;
-  transition: opacity 0.3s ease, outline-offset 0.1s ease;
+  -webkit-transition: opacity 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .f-item__toggle-password_active {
@@ -438,8 +456,9 @@ body {
 
 .f-item input[type="checkbox"]:focus + label:before,
 .f-item input[type="checkbox"]:active + label:before {
-  outline: 1px solid #777e90;
-  outline-offset: 2px;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px #777e90;
+          box-shadow: 0 0 0 2px #777e90;
 }
 
 .f-item input[type="checkbox"] + label:before {
@@ -451,9 +470,11 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  background-color: #777e90;
-  -webkit-transition: background-color 0.3s ease, outline-offset 0.1s ease;
-  transition: background-color 0.3s ease, outline-offset 0.1s ease;
+  background-color: #adb3c1;
+  -webkit-transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .f-item input[type="checkbox"]:checked + label:before {
